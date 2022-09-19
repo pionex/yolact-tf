@@ -9,7 +9,7 @@ set(CUDA_INCLUDE_DIRS /usr/local/cuda-11.6/include)
 #set(CMAKE_CUDA_FLAGS "--expt-relaxed-constexpr")
 
 #set(TF_INCLUDE_PATH /Users/sunjiahe/miniconda3/envs/tf2.0/lib/python3.6/site-packages/tensorflow_core/include)
-set(TF_INCLUDE_PATH /home/vedanshu/.local/lib/python3.10/site-packages/tensorflow/include)
+set(TF_INCLUDE_PATH /home/perception/anaconda3/envs/yolact2/lib/python3.8/site-packages/tensorflow/include/ /home/perception/anaconda3/envs/yolact2/include /home/perception/.local/lib/python-3.8/site-packages/tensorflow/include /home/perception/.local/lib/python3.8/site-packages/tensorflow/include)
 
 #add_definitions(-D__JETBRAINS_IDE__)
 add_definitions(-DEIGEN_USE_THREADS)
@@ -29,5 +29,5 @@ add_library(ops SHARED deformable_conv2d.cpp deformable_conv.cu deformable_conv.
 target_include_directories(ops PUBLIC ${CUDA_INCLUDE_DIRS} ${TF_INCLUDE_PATH})
 message(STATUS ${TF_INCLUDE_PATH})
 #target_link_libraries(ops PRIVATE /Users/sunjiahe/miniconda3/envs/tf2.0/lib/python3.6/site-packages/tensorflow_core/libtensorflow_framework.dylib)
-target_link_libraries(ops PUBLIC cuda /home/vedanshu/.local/lib/python3.10/site-packages/tensorflow/libtensorflow_framework.so.2)
+target_link_libraries(ops PUBLIC cuda /home/perception/anaconda3/envs/yolact2/lib/python3.8/site-packages/tensorflow/libtensorflow_framework.so.2)
 #target_compile_options(ops PUBLIC -march=native)
